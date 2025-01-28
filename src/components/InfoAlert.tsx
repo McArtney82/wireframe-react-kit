@@ -10,9 +10,17 @@ interface InfoAlertProps {
     type?: "note" | "question" | "developer";
     docLink?: string;
     jiraLink?: string;
+    verticalMargin?: number; // Add optional verticalMargin prop
 }
 
-export default function InfoAlert({ title = "Note", message, type = "note", docLink, jiraLink }: InfoAlertProps) {
+export default function InfoAlert({
+                                      title = "Note",
+                                      message,
+                                      type = "note",
+                                      docLink,
+                                      jiraLink,
+                                      verticalMargin = 4, // Default value for verticalMargin
+                                  }: InfoAlertProps) {
     const { notesVisible, developerNotesVisible } = useNotesVisibility();
 
     if (!notesVisible && type !== "developer") return null;
@@ -23,8 +31,10 @@ export default function InfoAlert({ title = "Note", message, type = "note", docL
     return (
         <div
             className={`flex items-start ${
-                type === "developer" ? "bg-gray-200 border-gray-400 text-gray-700" : "bg-blue-100 border-blue-400 text-blue-700"
-            } px-4 py-3 rounded relative`}
+                type === "developer"
+                    ? "bg-gray-200 border-gray-400 text-gray-700"
+                    : "bg-blue-100 border-blue-400 text-blue-700"
+            } px-4 py-3 rounded relative my-${verticalMargin}`} // Add dynamic vertical margin
             role="alert"
         >
             <Icon className="w-6 h-6 mr-2" />

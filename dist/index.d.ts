@@ -9,8 +9,9 @@ interface InfoAlertProps {
     type?: "note" | "question" | "developer";
     docLink?: string;
     jiraLink?: string;
+    verticalMargin?: number;
 }
-declare function InfoAlert({ title, message, type, docLink, jiraLink }: InfoAlertProps): react_jsx_runtime.JSX.Element | null;
+declare function InfoAlert({ title, message, type, docLink, jiraLink, verticalMargin, }: InfoAlertProps): react_jsx_runtime.JSX.Element | null;
 
 declare const NotesVisibilityProvider: React.FC<{
     children: ReactNode;
