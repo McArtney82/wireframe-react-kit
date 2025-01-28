@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3a7e3a-3395-4100-ac7d-dfc1487f2801" name="Changes" comment="" />
+    <list default="true" id="4f3a7e3a-3395-4100-ac7d-dfc1487f2801" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +27,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/McArtney82/wireframe-react-kit.git",
+    "accountId": "06de0094-4f32-4c0b-beb4-af3c266a4b16"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -36,12 +45,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "disable.download.node.interpreter.editor.notification": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/stevemacfarlane/Sites/wireframe-react-kit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
     "ts.external.directory.path": "/Users/stevemacfarlane/Sites/wireframe-design-tool/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -69,7 +81,7 @@
       <updated>1737940656277</updated>
       <workItem from="1737940657991" duration="11119000" />
       <workItem from="1738020808638" duration="1640000" />
-      <workItem from="1738041972423" duration="3588000" />
+      <workItem from="1738041972423" duration="6830000" />
     </task>
     <servers />
   </component>
