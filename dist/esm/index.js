@@ -1,4 +1,4 @@
-import { jsx } from 'react/jsx-runtime';
+import { jsx, jsxs } from 'react/jsx-runtime';
 import * as React from 'react';
 import React__default, { createContext, useState, useContext } from 'react';
 
@@ -4461,6 +4461,11 @@ function useViewTransitionState(to, opts = {}) {
 
 // lib/server-runtime/crypto.ts
 new TextEncoder();
+
+function DashboardTile(_a) {
+    var title = _a.title, colour = _a.colour, url = _a.url;
+    return (jsx(Link, { to: url, className: clsxMerge("w-64 h-64 flex items-center justify-center text-center mb-4", colour), children: jsx("h1", { className: "text-white", children: title }) }));
+}
 
 // Create Context
 var NotesVisibilityContext = createContext({
@@ -9030,5 +9035,89 @@ FontAwesomeIcon.propTypes = {
 };
 var convertCurry = convert.bind(null, React__default.createElement);
 
-export { NotesVisibilityProvider, clsxMerge, useNotesVisibility };
+/*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+const faJira = {
+  prefix: 'fab',
+  iconName: 'jira',
+  icon: [496, 512, [], "f7b1", "M490 241.7C417.1 169 320.6 71.8 248.5 0 83 164.9 6 241.7 6 241.7c-7.9 7.9-7.9 20.7 0 28.7C138.8 402.7 67.8 331.9 248.5 512c379.4-378 15.7-16.7 241.5-241.7 8-7.9 8-20.7 0-28.6zm-241.5 90l-76-75.7 76-75.7 76 75.7-76 75.7z"]
+};
+
+/*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+const faFileWord = {
+  prefix: 'fas',
+  iconName: 'file-word',
+  icon: [384, 512, [], "f1c2", "M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM111 257.1l26.8 89.2 31.6-90.3c3.4-9.6 12.5-16.1 22.7-16.1s19.3 6.4 22.7 16.1l31.6 90.3L273 257.1c3.8-12.7 17.2-19.9 29.9-16.1s19.9 17.2 16.1 29.9l-48 160c-3 10-12 16.9-22.4 17.1s-19.8-6.2-23.2-16.1L192 336.6l-33.3 95.3c-3.4 9.8-12.8 16.3-23.2 16.1s-19.5-7.1-22.4-17.1l-48-160c-3.8-12.7 3.4-26.1 16.1-29.9s26.1 3.4 29.9 16.1z"]
+};
+
+function InformationCircleIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    d: "M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z",
+    clipRule: "evenodd"
+  }));
+}
+const ForwardRef$1 = /*#__PURE__*/ React.forwardRef(InformationCircleIcon);
+
+function QuestionMarkCircleIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    d: "M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z",
+    clipRule: "evenodd"
+  }));
+}
+const ForwardRef = /*#__PURE__*/ React.forwardRef(QuestionMarkCircleIcon);
+
+function InfoAlert(_a) {
+    var _b = _a.title, title = _b === undefined ? "Note" : _b, message = _a.message, _c = _a.type, type = _c === undefined ? "note" : _c, docLink = _a.docLink, jiraLink = _a.jiraLink;
+    var _d = useNotesVisibility(), notesVisible = _d.notesVisible, developerNotesVisible = _d.developerNotesVisible;
+    if (!notesVisible && type !== "developer")
+        return null;
+    if (type === "developer" && !developerNotesVisible)
+        return null;
+    var Icon = type === "note" ? ForwardRef$1 : ForwardRef;
+    return (jsxs("div", { className: "flex items-start ".concat(type === "developer" ? "bg-gray-200 border-gray-400 text-gray-700" : "bg-blue-100 border-blue-400 text-blue-700", " px-4 py-3 rounded relative"), role: "alert", children: [jsx(Icon, { className: "w-6 h-6 mr-2" }), jsxs("div", { children: [title && jsxs("strong", { className: "font-bold", children: [title, ": "] }), jsx("span", { children: message }), jsxs("div", { className: "flex space-x-4 mt-2", children: [docLink && (jsxs("a", { href: docLink, target: "_blank", rel: "noopener noreferrer", className: "flex items-center text-blue-500 hover:underline", children: [jsx(FontAwesomeIcon, { icon: faFileWord, className: "w-5 h-5 mr-1" }), "Google Doc"] })), jiraLink && (jsxs("a", { href: jiraLink, target: "_blank", rel: "noopener noreferrer", className: "flex items-center text-blue-500 hover:underline", children: [jsx(FontAwesomeIcon, { icon: faJira, className: "w-5 h-5 mr-1" }), "Jira Task"] }))] })] })] }));
+}
+
+function NotesToggle() {
+    var _a = useNotesVisibility(), notesVisible = _a.notesVisible, toggleNotes = _a.toggleNotes;
+    return (jsx("div", { className: "fixed top-4 right-4", children: jsx("button", { onClick: toggleNotes, className: "px-4 py-2 bg-gray-800 text-white rounded shadow hover:bg-gray-700", children: notesVisible ? "Hide Notes" : "Show Notes" }) }));
+}
+
+export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility };
 //# sourceMappingURL=index.js.map
