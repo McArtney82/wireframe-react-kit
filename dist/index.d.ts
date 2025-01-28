@@ -7,11 +7,13 @@ interface InfoAlertProps {
     title?: string;
     message: string;
     type?: "note" | "question" | "developer";
-    docLink?: string;
-    jiraLink?: string;
+    docLinks?: string[];
+    jiraLinks?: string[];
     verticalMargin?: number;
 }
-declare function InfoAlert({ title, message, type, docLink, jiraLink, verticalMargin, }: InfoAlertProps): react_jsx_runtime.JSX.Element | null;
+declare function InfoAlert({ title, message, type, docLinks, // Default to an empty array
+jiraLinks, // Default to an empty array
+verticalMargin, }: InfoAlertProps): react_jsx_runtime.JSX.Element | null;
 
 declare const NotesVisibilityProvider: React.FC<{
     children: ReactNode;
