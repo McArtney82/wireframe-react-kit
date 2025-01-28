@@ -4497,8 +4497,15 @@ var NotesVisibilityContext = React.createContext({
 var NotesVisibilityProvider = function (_a) {
     var children = _a.children;
     var _b = React.useState(true), notesVisible = _b[0], setNotesVisible = _b[1];
-    var location = useLocation();
-    // Developer notes are visible only if the URL contains `?developer=true` AND `notesVisible` is true
+    // Safely check if useLocation can be called
+    var location;
+    try {
+        location = useLocation();
+    }
+    catch (error) {
+        console.warn("useLocation was called outside of a Router context. Ensure that NotesVisibilityProvider is wrapped inside a <BrowserRouter>.");
+        location = { pathname: "/", search: "", hash: "", state: null }; // Default fallback location
+    }
     var developerNotesVisible = notesVisible && new URLSearchParams(location.search).get("developer") === "true";
     var toggleNotes = function () {
         setNotesVisible(function (prev) { return !prev; });
@@ -9139,10 +9146,31 @@ function NotesToggle() {
     return (jsxRuntime.jsx("div", { className: "fixed top-4 right-4", children: jsxRuntime.jsx("button", { onClick: toggleNotes, className: "px-4 py-2 bg-gray-800 text-white rounded shadow hover:bg-gray-700", children: notesVisible ? "Hide Notes" : "Show Notes" }) }));
 }
 
+function usePreserveDeveloperQuery() {
+    var location;
+    try {
+        // Attempt to get the location from useLocation()
+        location = useLocation();
+    }
+    catch (error) {
+        // Fallback if called outside a Router context
+        console.warn("useLocation was called outside of a Router context. Ensure that components using usePreserveDeveloperQuery are wrapped inside a <BrowserRouter>.");
+        location = { pathname: "/", search: "", hash: "", state: null }; // Default fallback location
+    }
+    return function (path) {
+        var searchParams = new URLSearchParams(location.search);
+        if (searchParams.get("developer") === "true") {
+            return "".concat(path, "?").concat(searchParams.toString());
+        }
+        return path;
+    };
+}
+
 exports.DashboardTile = DashboardTile;
 exports.InfoAlert = InfoAlert;
 exports.NotesToggle = NotesToggle;
 exports.NotesVisibilityProvider = NotesVisibilityProvider;
 exports.clsxMerge = clsxMerge;
 exports.useNotesVisibility = useNotesVisibility;
+exports.usePreserveDeveloperQuery = usePreserveDeveloperQuery;
 //# sourceMappingURL=index.js.map

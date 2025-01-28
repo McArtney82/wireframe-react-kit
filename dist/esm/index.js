@@ -4477,8 +4477,15 @@ var NotesVisibilityContext = createContext({
 var NotesVisibilityProvider = function (_a) {
     var children = _a.children;
     var _b = useState(true), notesVisible = _b[0], setNotesVisible = _b[1];
-    var location = useLocation();
-    // Developer notes are visible only if the URL contains `?developer=true` AND `notesVisible` is true
+    // Safely check if useLocation can be called
+    var location;
+    try {
+        location = useLocation();
+    }
+    catch (error) {
+        console.warn("useLocation was called outside of a Router context. Ensure that NotesVisibilityProvider is wrapped inside a <BrowserRouter>.");
+        location = { pathname: "/", search: "", hash: "", state: null }; // Default fallback location
+    }
     var developerNotesVisible = notesVisible && new URLSearchParams(location.search).get("developer") === "true";
     var toggleNotes = function () {
         setNotesVisible(function (prev) { return !prev; });
@@ -9119,5 +9126,25 @@ function NotesToggle() {
     return (jsx("div", { className: "fixed top-4 right-4", children: jsx("button", { onClick: toggleNotes, className: "px-4 py-2 bg-gray-800 text-white rounded shadow hover:bg-gray-700", children: notesVisible ? "Hide Notes" : "Show Notes" }) }));
 }
 
-export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility };
+function usePreserveDeveloperQuery() {
+    var location;
+    try {
+        // Attempt to get the location from useLocation()
+        location = useLocation();
+    }
+    catch (error) {
+        // Fallback if called outside a Router context
+        console.warn("useLocation was called outside of a Router context. Ensure that components using usePreserveDeveloperQuery are wrapped inside a <BrowserRouter>.");
+        location = { pathname: "/", search: "", hash: "", state: null }; // Default fallback location
+    }
+    return function (path) {
+        var searchParams = new URLSearchParams(location.search);
+        if (searchParams.get("developer") === "true") {
+            return "".concat(path, "?").concat(searchParams.toString());
+        }
+        return path;
+    };
+}
+
+export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };
 //# sourceMappingURL=index.js.map

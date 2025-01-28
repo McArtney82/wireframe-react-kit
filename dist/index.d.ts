@@ -30,4 +30,6 @@ declare function useNotesVisibility(): {
 
 declare function NotesToggle(): react_jsx_runtime.JSX.Element;
 
-export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility };
+declare function usePreserveDeveloperQuery(): (path: string) => string;
+
+export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };
