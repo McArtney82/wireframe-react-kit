@@ -21,8 +21,11 @@ declare function InfoAlert({ title, message, type, docLink, jiraLink }: InfoAler
 
 declare const NotesVisibilityProvider: React.FC<{
     children: ReactNode;
+    location: {
+        search: string;
+    };
 }>;
-declare function useNotesVisibility(): {
+declare const useNotesVisibility: () => {
     notesVisible: boolean;
     developerNotesVisible: boolean;
     toggleNotes: () => void;
@@ -30,6 +33,8 @@ declare function useNotesVisibility(): {
 
 declare function NotesToggle(): react_jsx_runtime.JSX.Element;
 
-declare function usePreserveDeveloperQuery(): (path: string) => string;
+declare function usePreserveDeveloperQuery(location: {
+    search: string;
+}): (path: string) => string;
 
 export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };

@@ -1,31 +1,16 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { useLocation, Location } from "react-router-dom";
 
-// Create Context
-const NotesVisibilityContext = createContext<{
-    notesVisible: boolean;
-    developerNotesVisible: boolean;
-    toggleNotes: () => void;
-}>({
+const NotesVisibilityContext = createContext({
     notesVisible: true,
     developerNotesVisible: false,
     toggleNotes: () => {},
 });
 
-// Provider Component
-export const NotesVisibilityProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const NotesVisibilityProvider: React.FC<{ children: ReactNode; location: { search: string } }> = ({
+                                                                                                             children,
+                                                                                                             location,
+                                                                                                         }) => {
     const [notesVisible, setNotesVisible] = useState(true);
-
-    // Safely check if useLocation can be called
-    let location: Location | undefined;
-    try {
-        location = useLocation();
-    } catch (error) {
-        console.warn(
-            "useLocation was called outside of a Router context. Ensure that NotesVisibilityProvider is wrapped inside a <BrowserRouter>."
-        );
-        location = { pathname: "/", search: "", hash: "", state: null } as Location; // Default fallback location
-    }
 
     const developerNotesVisible =
         notesVisible && new URLSearchParams(location.search).get("developer") === "true";
@@ -41,7 +26,4 @@ export const NotesVisibilityProvider: React.FC<{ children: ReactNode }> = ({ chi
     );
 };
 
-// Custom Hook
-export function useNotesVisibility() {
-    return useContext(NotesVisibilityContext);
-}
+export const useNotesVisibility = () => useContext(NotesVisibilityContext);
