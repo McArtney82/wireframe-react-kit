@@ -36,7 +36,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/stevemacfarlane/Sites/wireframe-design-tool/src",
+    "last_opened_file_path": "/Users/stevemacfarlane/Sites/wireframe-react-kit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +69,7 @@
       <updated>1737940656277</updated>
       <workItem from="1737940657991" duration="11119000" />
       <workItem from="1738020808638" duration="1640000" />
+      <workItem from="1738041972423" duration="2611000" />
     </task>
     <servers />
   </component>
