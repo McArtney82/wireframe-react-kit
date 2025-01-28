@@ -3,13 +3,6 @@ import React, { ReactNode } from 'react';
 
 declare function clsxMerge(...classes: Array<string | boolean | undefined>): string;
 
-interface DashboardTileProps {
-    title: string;
-    colour: string;
-    url: string;
-}
-declare function DashboardTile({ title, colour, url }: DashboardTileProps): react_jsx_runtime.JSX.Element;
-
 interface InfoAlertProps {
     title?: string;
     message: string;
@@ -37,4 +30,4 @@ declare function usePreserveDeveloperQuery(location: {
     search: string;
 }): (path: string) => string;
 
-export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };
+export { InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };

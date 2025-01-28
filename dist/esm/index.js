@@ -1,5 +1,4 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { Link } from 'react-router-dom';
 import * as React from 'react';
 import React__default, { createContext, useState, useContext } from 'react';
 
@@ -2503,11 +2502,6 @@ function clsxMerge() {
         classes[_i] = arguments[_i];
     }
     return twMerge(clsx(classes));
-}
-
-function DashboardTile(_a) {
-    var title = _a.title, colour = _a.colour, url = _a.url;
-    return (jsx(Link, { to: url, className: clsxMerge("w-64 h-64 flex items-center justify-center text-center mb-4", colour), children: jsx("h1", { className: "text-white", children: title }) }));
 }
 
 var NotesVisibilityContext = createContext({
@@ -7156,7 +7150,7 @@ function InfoAlert(_a) {
 
 function NotesToggle() {
     var _a = useNotesVisibility(), notesVisible = _a.notesVisible, toggleNotes = _a.toggleNotes;
-    return (jsx("div", { className: "fixed top-4 right-4", children: jsx("button", { onClick: toggleNotes, className: "px-4 py-2 bg-gray-800 text-white rounded shadow hover:bg-gray-700", children: notesVisible ? "Hide Notes" : "Show Notes" }) }));
+    return (jsx("div", { className: "fixed top-4 right-4", children: jsx("button", { onClick: toggleNotes, className: "px-4 py-2 bg-red-600 text-white rounded shadow hover:bg-red-500", children: notesVisible ? "Hide Notes" : "Show Notes" }) }));
 }
 
 function usePreserveDeveloperQuery(location) {
@@ -7169,5 +7163,5 @@ function usePreserveDeveloperQuery(location) {
     };
 }
 
-export { DashboardTile, InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };
+export { InfoAlert, NotesToggle, NotesVisibilityProvider, clsxMerge, useNotesVisibility, usePreserveDeveloperQuery };
 //# sourceMappingURL=index.js.map
