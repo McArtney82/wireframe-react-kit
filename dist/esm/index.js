@@ -2511,7 +2511,7 @@ var NotesVisibilityContext = createContext({
 });
 var NotesVisibilityProvider = function (_a) {
     var children = _a.children, location = _a.location;
-    var _b = useState(true), notesVisible = _b[0], setNotesVisible = _b[1];
+    var _b = useState(false), notesVisible = _b[0], setNotesVisible = _b[1];
     var developerNotesVisible = notesVisible && new URLSearchParams(location.search).get("developer") === "true";
     var toggleNotes = function () {
         setNotesVisible(function (prev) { return !prev; });

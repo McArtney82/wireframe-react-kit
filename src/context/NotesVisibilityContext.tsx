@@ -10,7 +10,7 @@ export const NotesVisibilityProvider: React.FC<{ children: ReactNode; location: 
                                                                                                              children,
                                                                                                              location,
                                                                                                          }) => {
-    const [notesVisible, setNotesVisible] = useState(true);
+    const [notesVisible, setNotesVisible] = useState(false);
 
     const developerNotesVisible =
         notesVisible && new URLSearchParams(location.search).get("developer") === "true";
