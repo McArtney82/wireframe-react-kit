@@ -7138,7 +7138,7 @@ function QuestionMarkCircleIcon({
 const ForwardRef = /*#__PURE__*/ React.forwardRef(QuestionMarkCircleIcon);
 
 function InfoAlert(_a) {
-    var _b = _a.title, title = _b === undefined ? "Note" : _b, message = _a.message, _c = _a.type, type = _c === undefined ? "note" : _c, docLink = _a.docLink, jiraLink = _a.jiraLink, _d = _a.verticalMargin, verticalMargin = _d === undefined ? 4 : _d;
+    var _b = _a.title, title = _b === undefined ? "Note" : _b, message = _a.message, _c = _a.type, type = _c === undefined ? "note" : _c, docLink = _a.docLink, jiraLink = _a.jiraLink; _a.verticalMargin;
     var _e = useNotesVisibility(), notesVisible = _e.notesVisible, developerNotesVisible = _e.developerNotesVisible;
     if (!notesVisible && type !== "developer")
         return null;
@@ -7147,7 +7147,7 @@ function InfoAlert(_a) {
     var Icon = type === "note" ? ForwardRef$1 : ForwardRef;
     return (jsxs("div", { className: "flex items-start ".concat(type === "developer"
             ? "bg-gray-200 border-gray-400 text-gray-700"
-            : "bg-blue-100 border-blue-400 text-blue-700", " px-4 py-3 rounded relative my-").concat(verticalMargin), role: "alert", children: [jsx(Icon, { className: "w-6 h-6 mr-2" }), jsxs("div", { children: [title && jsxs("strong", { className: "font-bold", children: [title, ": "] }), jsx("span", { children: message }), jsxs("div", { className: "flex space-x-4 mt-2", children: [docLink && (jsxs("a", { href: docLink, target: "_blank", rel: "noopener noreferrer", className: "flex items-center text-blue-500 hover:underline", children: [jsx(FontAwesomeIcon, { icon: faFileWord, className: "w-5 h-5 mr-1" }), "Google Doc"] })), jiraLink && (jsxs("a", { href: jiraLink, target: "_blank", rel: "noopener noreferrer", className: "flex items-center text-blue-500 hover:underline", children: [jsx(FontAwesomeIcon, { icon: faJira, className: "w-5 h-5 mr-1" }), "Jira Task"] }))] })] })] }));
+            : "bg-blue-100 border-blue-400 text-blue-700", " px-4 py-3 rounded relative my-4"), role: "alert", children: [jsx(Icon, { className: "w-6 h-6 mr-2" }), jsxs("div", { children: [title && jsxs("strong", { className: "font-bold", children: [title, ": "] }), jsx("span", { children: message }), jsxs("div", { className: "flex space-x-4 mt-2", children: [docLink && (jsxs("a", { href: docLink, target: "_blank", rel: "noopener noreferrer", className: "flex items-center text-blue-500 hover:underline", children: [jsx(FontAwesomeIcon, { icon: faFileWord, className: "w-5 h-5 mr-1" }), "Google Doc"] })), jiraLink && (jsxs("a", { href: jiraLink, target: "_blank", rel: "noopener noreferrer", className: "flex items-center text-blue-500 hover:underline", children: [jsx(FontAwesomeIcon, { icon: faJira, className: "w-5 h-5 mr-1" }), "Jira Task"] }))] })] })] }));
 }
 
 function NotesToggle() {

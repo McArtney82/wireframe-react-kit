@@ -34,7 +34,7 @@ export default function InfoAlert({
                 type === "developer"
                     ? "bg-gray-200 border-gray-400 text-gray-700"
                     : "bg-blue-100 border-blue-400 text-blue-700"
-            } px-4 py-3 rounded relative my-${verticalMargin}`} // Add dynamic vertical margin
+            } px-4 py-3 rounded relative my-4`} // Add dynamic vertical margin
             role="alert"
         >
             <Icon className="w-6 h-6 mr-2" />
